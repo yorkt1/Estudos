@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .adm {
+            padding: 20px;
+        }
+
+        .principal {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .div-infos-adm {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .nome-adm p {
+            font-size: 20px;
+        }
+
+        .principal-dois {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-mid {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ebe8d9;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease; /* Transição para o movimento do contêiner */
+        }
+
+        .left-container,
+        .right-container {
+            flex: 1;
+            margin: 10px;
+            transition: transform 0.5s ease; /* Transição para o movimento */
+            position: relative; /* Garante que o z-index funcione */
+            z-index: 1; /* Coloca os containers atrás da div movível */
+        }
+
+        .input-adm-css,
+        .button-prod-css {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .button-prod-css {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .container-button {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .button-prod-css:hover {
+            background-color: #218838;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .btn-css {
+            background-color: #678371;
+            color: white;
+            cursor: pointer;
+            border: none;
+            width: 20%;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-css:hover {
+            background-color: #5e7667;
+        }
+
+        .btn-css-excluir {
+            background-color: #dc3545;
+            color: white;
+            cursor: pointer;
+            border: none;
+            width: 20%;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-css-excluir:hover {
+            background-color: #c82333;
+        }
+
+        .search-box-prod {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .search-box-prod input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-box-prod button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .movable-div {
+            width: 50%;
+            height: 100%;
+            background-color: #ff0000;
+            position: absolute;
+            top: 0; /* Muda para o topo */
+            left: 50%;
+            transition: left 0.5s ease;
+            z-index: 2; /* Garante que a div movível fique em cima */
+        }
+
+        .move-right {
+            left: 0%; /* Move para a direita */
+        }
+
+        /* Classes para o efeito tesoura */
+        .move-left-container {
+            transform: translateX(-10px); /* Move a esquerda ligeiramente para a esquerda */
+        }
+
+        .move-right-container { 
+            transform: translateX(-10px); /* Move a direita ligeiramente para a direita */
+        }
+
+
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            
+            .container-button {
+        display: none; /* Adicione esta linha */
+    }
+
+
+            .movable-div {
+          height: auto;
+        }
+            .container-mid {
+                flex-direction: column;
+            }
+
+            .left-container,
+            .right-container {
+                margin: 0;
+                background-color: #ebe8d9;
+            }
+
+           .right-container{
+            margin-top: 30px;
+           }
+
+            .div-infos-adm {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-box-prod {
+                flex-direction: column;
+            }
+
+            .container-mid{
+                background-color: white;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .button-prod-css,
+            .btn-css,
+            .btn-css-excluir {
+                padding: 8px;
+                font-size: 7px;
+            }
+
+            .input-adm-css {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="adm">
+        <div class="principal">
+            <div class="div-infos-adm">
+                <div class="foto-adm"></div>
+                <div class="nome-adm">
+                    <p>Olá ADMINISTRADOR</p>
+                </div>
+            </div>
+
+            <div class="principal-dois">
+                <div class="container-mid registering">
+                    <!-- Div que se move -->
+                    <div class="movable-div"></div>
+
+                    <div class="left-container">
+                        <p>CATEGORIA</p>
+                        <select class="input-adm-css">
+                            <option value="" disabled>Selecione a categoria do Produto</option>
+                            <option value="Arranjos">Arranjos</option>
+                            <option value="Desidratadas">Desidratadas</option>
+                            <option value="Orquideas">Orquídeas</option>
+                            <option value="Plantas">Plantas</option>
+                        </select>
+
+                        <p>NOME</p>
+                        <input type="text" class="input-adm-css" placeholder="Digite o nome do Produto." />
+
+                        <p>DESCRIÇÃO</p>
+                        <input type="text" class="input-adm-css" placeholder="Digite a descrição do Produto." />
+
+                        <p>TAMANHO</p>
+                        <input type="text" class="input-adm-css" placeholder="Digite o tamanho do Produto." />
+
+                        <p>FOTO</p>
+                        <input type="file" class="input-adm-css" />
+
+                        <div class="btn">
+                            <button class="btn-css">CADASTRAR</button>
+                        </div>
+                    </div>
+
+                    <div class="right-container">
+                        <div class="search-box-prod">
+                            <input type="text" placeholder="Procurar" />
+                            <button>
+                                <img src="search_icon.png" alt="Search" />
+                            </button>
+                        </div>
+
+                        <p>NOME</p>
+                        <input type="text" class="input-adm-css" placeholder="Digite o nome do Produto." />
+
+                        <p>CATEGORIA</p>
+                        <select class="input-adm-css">
+                            <option value="" disabled>Selecione a categoria do Produto</option>
+                            <option value="Arranjos">Arranjos</option>
+                            <option value="Desidratadas">Desidratadas</option>
+                            <option value="Orquideas">Orquídeas</option>
+                            <option value="Plantas">Plantas</option>
+                        </select>
+
+                        <p>DESCRIÇÃO</p>
+                        <input type="text" class="input-adm-css" placeholder="Digite a descrição do Produto." />
+
+                        <p>TAMANHO</p>
+                        <input type="text" class="input-adm-css" placeholder="Digite o tamanho do Produto." />
+
+                        <div class="btn">
+                            <button class="btn-css">EDITAR</button>
+                            <button class="btn-css-excluir">EXCLUIR</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-button">
+                    <div class="button-div-um">
+                        <button class="button-prod-css" id="btn-cadastrar">CADASTRAR PRODUTO</button>
+                    </div>
+                    <div class="button-div-dois">
+                        <button class="button-prod-css" id="btn-editar">EDITAR PRODUTO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const movableDiv = document.querySelector('.movable-div');
+        const btnCadastrar = document.getElementById('btn-cadastrar');
+        const btnEditar = document.getElementById('btn-editar');
+        const leftContainer = document.querySelector('.left-container');
+        const rightContainer = document.querySelector('.right-container');
+
+        // Mover a div para a esquerda (Cadastrar Produto)
+        btnCadastrar.addEventListener('click', () => {
+            movableDiv.classList.remove('move-right');
+            movableDiv.classList.add('move-left'); // Adiciona a classe para mover a div
+            leftContainer.classList.add('move-left-container'); // Move a seção da esquerda
+            rightContainer.classList.add('move-right-container'); // Move a seção da direita
+        });
+
+        // Mover a div para a direita (Editar Produto)
+        btnEditar.addEventListener('click', () => {
+            movableDiv.classList.add('move-right');
+            movableDiv.classList.remove('move-left'); // Remove a classe que move a div
+            leftContainer.classList.remove('move-left-container'); // Retorna a seção da esquerda
+            rightContainer.classList.remove('move-right-container'); // Retorna a seção da direita
+        });
+    </script>
+</body>
+
+</html>
