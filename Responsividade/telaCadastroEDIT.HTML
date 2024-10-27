@@ -6,6 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+
+*,
+*:focus{outline: none}
+
+
+.form-item{
+  position: relative;
+  margin-bottom: 15px
+}
+.form-item input{
+    width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+  display: block;
+  padding: 8px;
+  background: transparent;
+  border: solid 1px #ccc;
+  transition: all .3s ease;
+  padding: 0 15px;
+  height: 40px;
+}
+.form-item input:focus{
+  border-color: #678371
+}
+.form-item label{
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  transition: all .3s ease
+}
+.form-item input:focus + label,
+.form-item input:valid + label{
+  font-size: 11px;
+  top: -5px
+}
+.form-item input:focus + label{
+  color: #678371
+}
+
+
         * {
             margin: 0;
             padding: 0;
@@ -14,8 +64,16 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: rgb(146, 146, 146);
+            align-items: center;
+            display: flex;
+            justify-content: center;
         }
+
+        p {
+    text-align: initial;
+    margin-bottom: 10px; /* Adicione esta linha para criar espaço abaixo dos parágrafos */
+}
 
         .adm {
             padding: 20px;
@@ -49,7 +107,7 @@
         .container-mid {
             display: flex;
             justify-content: space-between;
-            background-color: #ebe8d9;
+            background-color: #fff;
             border-radius: 8px;
             padding: 20px;
             position: relative;
@@ -100,12 +158,23 @@
             gap: 30px;
         }
 
+        .btn-css-buttom{
+            background-color: #678371;
+            color: white;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
         .btn-css {
             background-color: #678371;
             color: white;
             cursor: pointer;
             border: none;
-            width: 20%;
+            width: 23%;
             border-radius: 4px;
             padding: 10px;
             margin-top: 10px;
@@ -195,7 +264,7 @@
             .left-container,
             .right-container {
                 margin: 0;
-                background-color: #ebe8d9;
+                background-color: #fff;
             }
 
            .right-container{
@@ -229,18 +298,25 @@
                 padding: 8px;
             }
         }
+
+        .adm{
+            width: 80%;
+            height: 100%;
+            background-color: #ebe8d9;
+            border-radius: 25px;
+        }
     </style>
 </head>
 
 <body>
     <div class="adm">
         <div class="principal">
-            <div class="div-infos-adm">
+            
                 <div class="foto-adm"></div>
                 <div class="nome-adm">
                     <p>Olá ADMINISTRADOR</p>
                 </div>
-            </div>
+           
 
             <div class="principal-dois">
                 <div class="container-mid registering">
@@ -257,14 +333,26 @@
                             <option value="Plantas">Plantas</option>
                         </select>
 
-                        <p>NOME</p>
-                        <input type="text" class="input-adm-css" placeholder="Digite o nome do Produto." />
+                       
+  
+                            <div class="form-item">
+                              <input type="text"  autocomplete="off" required value="test">
+                              <label for="username">Nome</label>
+                            </div>
+                            
+                            <div class="form-item">
+                              <input type="password" autocomplete="off" required>
+                              <label for="password">Descrição</label>
+                            </div>
+                            
+                         
 
-                        <p>DESCRIÇÃO</p>
-                        <input type="text" class="input-adm-css" placeholder="Digite a descrição do Produto." />
+                            <div class="form-item">
+                                <input type="text"  autocomplete="off" required>
+                                <label for="password">Tamanho</label>
+                              </div>    
 
-                        <p>TAMANHO</p>
-                        <input type="text" class="input-adm-css" placeholder="Digite o tamanho do Produto." />
+                       
 
                         <p>FOTO</p>
                         <input type="file" class="input-adm-css" />
@@ -281,10 +369,6 @@
                                 <img src="search_icon.png" alt="Search" />
                             </button>
                         </div>
-
-                        <p>NOME</p>
-                        <input type="text" class="input-adm-css" placeholder="Digite o nome do Produto." />
-
                         <p>CATEGORIA</p>
                         <select class="input-adm-css">
                             <option value="" disabled>Selecione a categoria do Produto</option>
@@ -294,11 +378,24 @@
                             <option value="Plantas">Plantas</option>
                         </select>
 
-                        <p>DESCRIÇÃO</p>
-                        <input type="text" class="input-adm-css" placeholder="Digite a descrição do Produto." />
+                        
+                            <div class="form-item">
+                              <input type="text"  autocomplete="off" required value="test">
+                              <label for="username">Nome</label>
+                            </div>
+                            
+                            <div class="form-item">
+                              <input type="password" autocomplete="off" required>
+                              <label for="password">Descrição</label>
+                            </div>
+                            
+                         
 
-                        <p>TAMANHO</p>
-                        <input type="text" class="input-adm-css" placeholder="Digite o tamanho do Produto." />
+                            <div class="form-item">
+                                <input type="text"  autocomplete="off" required>
+                                <label for="password">Tamanho</label>
+                              </div>    
+
 
                         <div class="btn">
                             <button class="btn-css">EDITAR</button>
@@ -309,10 +406,10 @@
 
                 <div class="container-button">
                     <div class="button-div-um">
-                        <button class="button-prod-css" id="btn-cadastrar">CADASTRAR PRODUTO</button>
+                        <button class="btn-css-buttom" id="btn-cadastrar">CADASTRAR PRODUTO</button>
                     </div>
                     <div class="button-div-dois">
-                        <button class="button-prod-css" id="btn-editar">EDITAR PRODUTO</button>
+                        <button class="btn-css-buttom" id="btn-editar">EDITAR PRODUTO</button>
                     </div>
                 </div>
             </div>
@@ -320,27 +417,41 @@
     </div>
 
     <script>
+        window.onload = inicializarEstado;
         const movableDiv = document.querySelector('.movable-div');
         const btnCadastrar = document.getElementById('btn-cadastrar');
         const btnEditar = document.getElementById('btn-editar');
         const leftContainer = document.querySelector('.left-container');
         const rightContainer = document.querySelector('.right-container');
-
+    
+        // Função para definir o estado inicial
+        function inicializarEstado() {
+            // A div começa centralizada sem nenhuma classe de movimento
+            movableDiv.classList.remove('move-left', 'move-right');
+            leftContainer.classList.remove('move-left-container');
+            rightContainer.classList.remove('move-right-container');
+        }
+    
         // Mover a div para a esquerda (Cadastrar Produto)
         btnCadastrar.addEventListener('click', () => {
+            // Remover classe move-right e adicionar move-left
             movableDiv.classList.remove('move-right');
             movableDiv.classList.add('move-left'); // Adiciona a classe para mover a div
             leftContainer.classList.add('move-left-container'); // Move a seção da esquerda
             rightContainer.classList.add('move-right-container'); // Move a seção da direita
         });
-
+    
         // Mover a div para a direita (Editar Produto)
         btnEditar.addEventListener('click', () => {
-            movableDiv.classList.add('move-right');
-            movableDiv.classList.remove('move-left'); // Remove a classe que move a div
+            // Remover classe move-left e adicionar move-right
+            movableDiv.classList.remove('move-left');
+            movableDiv.classList.add('move-right'); // Adiciona a classe para mover a div
             leftContainer.classList.remove('move-left-container'); // Retorna a seção da esquerda
             rightContainer.classList.remove('move-right-container'); // Retorna a seção da direita
         });
+    
+        // Chamar a função para definir o estado inicial quando a página carregar
+        
     </script>
 </body>
 
