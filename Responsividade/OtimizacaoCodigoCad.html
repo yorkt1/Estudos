@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        height: 13vh;
+        background-color: #678371;
+    }
+
+    .ConteinerPrincipal {
+        width: 100%;
+        height: 87vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #54705e;
+    }
+
+    .conteinerCentral {
+        width: 80%;
+        height: 90%;
+        margin: 20px;
+        background-color: #ebe8d9;
+        border-radius: 25px;
+    }
+
+    .painelfoto, .btn{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    .Informacao-Adm {
+        width: 100%;
+        height: 82%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    .container-mid {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.5s ease;
+        width: 90%;
+
+    }
+    .left-container,
+    .right-container {
+            flex: 1;
+            margin: 20px;
+            transition: transform 0.5s ease;
+            /* Transição para o movimento */
+            position: relative;
+            /* Garante que o z-index funcione */
+            z-index: 1;
+            /* Coloca os containers atrás da div movível */
+        }
+
+    .movable-div {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        /* Muda para o topo */
+        left: 50%;
+        transition: left 0.5s ease;
+        z-index: 2;
+        /* Garante que a div movível fique em cima */
+    }
+
+    .container-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+.btn-css-buttom {
+    background-color: #678371;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    
+
+}
+
+.btn-css, .btn-css-cadastrar {
+    background-color: #678371;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 80px;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    
+}
+.btn-css-cadastrar {
+    width: 100px;
+}
+.btn-css-excluir {
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    border: none;
+    width: 80px;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.input-adm-css, .button-prod-css {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+*:focus {
+            outline: none
+        }
+
+
+        .form-item {
+            position: relative;
+            margin-bottom: 15px
+        }
+
+        .form-item input {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            padding: 8px;
+            background: transparent;
+            border: solid 1px #ccc;
+            transition: all .3s ease;
+            padding: 0 5px;
+            height: 40px;
+        }
+
+        .form-item input:focus {
+            border-color: #678371
+        }
+
+        .form-item label {
+            position: absolute;
+            cursor: text;
+            z-index: 2;
+            top: 13px;
+            left: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            background: #fff;
+            padding: 0 10px;
+            color: #999;
+            transition: all .3s ease
+        }
+
+        .form-item input:focus+label,
+        .form-item input:valid+label {
+            font-size: 11px;
+            top: -5px
+        }
+
+        .form-item input:focus+label {
+            color: #678371
+        }
+
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+
+        .container-button {
+            display: none;
+            /* Adicione esta linha */
+        }
+
+
+        .movable-div {
+            height: auto;
+        }
+
+        .container-mid {
+            flex-direction: column;
+        }
+
+        .left-container,
+        .right-container {
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .right-container {
+            margin-top: 30px;
+        }
+
+        .div-infos-adm {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .search-box-prod {
+            flex-direction: column;
+        }
+
+        .container-mid {
+            background-color: white;
+
+        }
+
+    }
+
+    @media (max-width:480px) {
+
+        .button-prod-css,
+        .btn-css,
+        .btn-css-excluir {
+            padding: 8px;
+            font-size: 7px;
+        }
+
+        .input-adm-css {
+            padding: 8px;
+        }
+    }
+
+    .adm {
+        width: 80%;
+        height: 100%;
+        background-color: #ebe8d9;
+        border-radius: 25px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+
+    }
+</style>
+
+<body>
+
+    <header></header>
+    <div class="ConteinerPrincipal">
+        <div class="conteinerCentral">
+            <div class="painelfoto">
+                <div class="fotoAdm"></div>
+                <H1>Ola Administrador</H1>
+            </div>
+            <div class="Informacao-Adm">
+                <div class="container-mid registering">
+                    <!-- <div class="movable-div"><img src="prod-foto.png" alt=""></div> -->
+
+
+                    <div class="left-container">
+                        <!-- <p>CATEGORIA</p> -->
+                        <select class="input-adm-css">
+                            <option value="" disabled>Selecione a categoria do Produto</option>
+                            <option value="Arranjos">Arranjos</option>
+                            <option value="Desidratadas">Desidratadas</option>
+                            <option value="Orquideas">Orquídeas</option>
+                            <option value="Plantas">Plantas</option>
+                        </select>
+                        <div class="form-item">
+                            <input type="text" autocomplete="off" required value="test">
+                            <label for="username">Nome</label>
+                        </div>
+
+                        <div class="form-item">
+                            <input type="password" autocomplete="off" required>
+                            <label for="password">Descrição</label>
+                        </div>
+                        <div class="form-item">
+                            <input type="text" autocomplete="off" required>
+                            <label for="password">Tamanho</label>
+                        </div>
+                        <!-- <p>FOTO</p> -->
+                        <input type="file" class="input-adm-css" />
+
+                        <div class="btn">
+                            <button class="btn-css-cadastrar">CADASTRAR</button>
+                        </div>
+                    </div>
+
+                    <div class="right-container">
+                        <div class="search-box-prod">
+                            <input type="text" placeholder="Procurar" />
+                            <button>
+                                <img src="search_icon.png" alt="Search" />
+                            </button>
+                        </div>
+                        <!-- <p>CATEGORIA</p> -->
+                        <select class="input-adm-css">
+                            <option value="" disabled>Selecione a categoria do Produto</option>
+                            <option value="Arranjos">Arranjos</option>
+                            <option value="Desidratadas">Desidratadas</option>
+                            <option value="Orquideas">Orquídeas</option>
+                            <option value="Plantas">Plantas</option>
+                        </select>
+                        <div class="form-item">
+                            <input type="text" autocomplete="off" required value="test">
+                            <label for="username">Nome</label>
+                        </div>
+                        <div class="form-item">
+                            <input type="password" autocomplete="off" required>
+                            <label for="password">Descrição</label>
+                        </div>
+                        <div class="form-item">
+                            <input type="text" autocomplete="off" required>
+                            <label for="password">Tamanho</label>
+                        </div>
+
+
+                        <div class="btn">
+                            <button class="btn-css">EDITAR</button>
+                            <button class="btn-css-excluir">EXCLUIR</button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="container-button">
+                    <div class="button-div-um">
+                        <button class="btn-css-buttom" id="btn-cadastrar">CADASTRAR PRODUTO</button>
+                    </div>
+                    <div class="button-div-dois">
+                        <button class="btn-css-buttom" id="btn-editar">EDITAR PRODUTO</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+<script>
+
+    window.onload = inicializarEstado;
+    const movableDiv = document.querySelector('.movable-div');
+    const btnCadastrar = document.getElementById('btn-cadastrar');
+    const btnEditar = document.getElementById('btn-editar');
+    const leftContainer = document.querySelector('.left-container');
+    const rightContainer = document.querySelector('.right-container');
+
+    // Função para definir o estado inicial
+
+    function inicializarEstado() {
+
+
+        movableDiv.classList.remove('move-right');
+        movableDiv.classList.add('move-right');
+
+
+        leftContainer.classList.remove('move-right-container');
+        leftContainer.classList.add('move-right-container');
+
+
+        rightContainer.classList.remove('move-right-container');
+        rightContainer.classList.add('move-right-container');
+
+        btnCadastrar.addEventListener('click', () => {
+
+            movableDiv.classList.remove('move-right');
+
+            rightContainer.classList.remove('move-right-container');
+            leftContainer.classList.remove('move-right-container');
+        });
+
+
+        btnEditar.addEventListener('click', () => {
+
+            movableDiv.classList.add('move-right');
+
+            rightContainer.classList.add('move-right-container');
+            leftContainer.classList.add('move-right-container');
+        });
+    }
+
+</script>
+
+</html>
