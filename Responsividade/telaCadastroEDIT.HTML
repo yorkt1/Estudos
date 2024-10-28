@@ -435,11 +435,6 @@
             leftContainer.classList.add('move-right-container');
 
 
-
-
-
-
-
             rightContainer.classList.remove('move-right-container');
             rightContainer.classList.add('move-right-container');
             // Move a seção da direita
@@ -447,14 +442,12 @@
             // Mover a div para a esquerda (Cadastrar Produto)
             btnCadastrar.addEventListener('click', () => {
                 // Remover classe move-right e adicionar move-left
-
-
                 movableDiv.classList.remove('move-right');// move o vermelho 
 
-
-                leftContainer.classList.add('move-left-container'); // Move a seção da esquerda
-
                 rightContainer.classList.remove('move-right-container'); // Move a seção da direita
+                leftContainer.classList.remove('move-right-container');
+              
+                
             });
 
             // Mover a div para a direita (Editar Produto)
@@ -462,10 +455,9 @@
                 // Remover classe move-left e adicionar move-right
                 movableDiv.classList.add('move-right'); // Adiciona a classe para mover a div
 
-
-
-                leftContainer.classList.remove('move-left-container'); // Move a seção da esquerda
                 rightContainer.classList.add('move-right-container'); // Move a seção da direita
+                leftContainer.classList.add('move-right-container');
+                
 
 
             });
