@@ -137,12 +137,14 @@
 }
 
 .input-adm-css, .button-prod-css {
-    width: 100%;
-    padding: 10px;
+      width: 93%;
+    padding: 15px;
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+.input-adm-css
 
 
 *:focus {
@@ -156,19 +158,19 @@
         }
 
         .form-item input {
-            width: 100%;
-            padding: 15px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            display: block;
-            padding: 8px;
-            background: transparent;
-            border: solid 1px #ccc;
-            transition: all .3s ease;
-            padding: 0 5px;
-            height: 40px;
-        }
+            width: 95%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    background: transparent;
+    border: solid 1px #ccc;
+    transition: all .3s ease;
+    padding-left: 17px;
+    height: 40px;
+}
+        
+
 
         .form-item input:focus {
             border-color: #678371
@@ -197,6 +199,24 @@
         .form-item input:focus+label {
             color: #678371
         }
+
+        .move-right {
+            left: 0%;
+            /* Move para a direita */
+        }
+
+
+        /* Classes para o efeito tesoura */
+        .move-left-container {
+            transform: translateX(-10px);
+            /* Move a esquerda ligeiramente para a esquerda */
+        }
+
+        .move-right-container {
+            transform: translateX(10px);
+            /* Move a direita ligeiramente para a direita */
+        }
+
 
 
     /* Responsividade */
@@ -282,7 +302,7 @@
             <div class="Informacao-Adm">
                 <div class="container-mid registering">
                     <!-- <div class="movable-div"><img src="prod-foto.png" alt=""></div> -->
-
+                    <div class="movable-div"><img src="prod-foto.png" alt=""></div>
 
                     <div class="left-container">
                         <!-- <p>CATEGORIA</p> -->
@@ -294,7 +314,7 @@
                             <option value="Plantas">Plantas</option>
                         </select>
                         <div class="form-item">
-                            <input type="text" autocomplete="off" required value="test">
+                            <input type="text" id="username" autocomplete="off" required >
                             <label for="username">Nome</label>
                         </div>
 
@@ -303,7 +323,7 @@
                             <label for="password">Descrição</label>
                         </div>
                         <div class="form-item">
-                            <input type="text" autocomplete="off" required>
+                            <input type="text" id="password" autocomplete="off" required>
                             <label for="password">Tamanho</label>
                         </div>
                         <!-- <p>FOTO</p> -->
@@ -316,7 +336,7 @@
 
                     <div class="right-container">
                         <div class="search-box-prod">
-                            <input type="text" placeholder="Procurar" />
+                            <input class="input-adm-css-procurar" type="text" placeholder="Procurar" />
                             <button>
                                 <img src="search_icon.png" alt="Search" />
                             </button>
@@ -330,15 +350,15 @@
                             <option value="Plantas">Plantas</option>
                         </select>
                         <div class="form-item">
-                            <input type="text" autocomplete="off" required value="test">
+                            <input type="text" id="username"autocomplete="off" required value="">
                             <label for="username">Nome</label>
                         </div>
                         <div class="form-item">
-                            <input type="password" autocomplete="off" required>
+                            <input type="password" id="password" autocomplete="off" required>
                             <label for="password">Descrição</label>
                         </div>
                         <div class="form-item">
-                            <input type="text" autocomplete="off" required>
+                            <input type="text" id="password" autocomplete="off" required>
                             <label for="password">Tamanho</label>
                         </div>
 
