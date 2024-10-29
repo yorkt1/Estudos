@@ -29,19 +29,28 @@
 
     .conteinerCentral {
         width: 80%;
-        height: 90%;
+        height: 95%;
         margin: 20px;
         background-color: #ebe8d9;
         border-radius: 25px;
     }
 
-    .painelfoto, .btn{
+    .btn,
+    .painelfoto {
         display: flex;
         align-items: center;
         text-align: center;
         justify-content: center;
         width: 100%;
 
+    }
+
+    .fotoAdm {
+        margin-top: 20px;
+    }
+
+    .painelfoto {
+        flex-direction: column;
     }
 
     .Informacao-Adm {
@@ -65,19 +74,24 @@
         overflow: hidden;
         transition: transform 0.5s ease;
         width: 90%;
-
+        height: 80%;
     }
+
     .left-container,
     .right-container {
-            flex: 1;
-            margin: 20px;
-            transition: transform 0.5s ease;
-            /* Transição para o movimento */
-            position: relative;
-            /* Garante que o z-index funcione */
-            z-index: 1;
-            /* Coloca os containers atrás da div movível */
-        }
+        flex: 1;
+        margin: 20px;
+        transition: transform 0.5s ease;
+        /* Transição para o movimento */
+        position: relative;
+        /* Garante que o z-index funcione */
+        z-index: 1;
+        /* Coloca os containers atrás da div movível */
+        
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+    }
 
     .movable-div {
         width: 50%;
@@ -89,133 +103,140 @@
         transition: left 0.5s ease;
         z-index: 2;
         /* Garante que a div movível fique em cima */
+        border-radius: 8px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
     }
 
     .container-button {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-   
-}
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
 
-.btn-css-buttom {
-    background-color: #678371;
-    color: white;
-    cursor: pointer;
-    border: none;
-    width: 100%;
-    border-radius: 4px;
-    padding: 10px;
-    
+    }
 
-}
-
-.btn-css, .btn-css-cadastrar {
-    background-color: #678371;
-    color: white;
-    cursor: pointer;
-    border: none;
-    width: 80px;
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: 10px;
-    
-}
-.btn-css-cadastrar {
-    width: 100px;
-}
-.btn-css-excluir {
-    background-color: #dc3545;
-    color: white;
-    cursor: pointer;
-    border: none;
-    width: 80px;
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.input-adm-css, .button-prod-css {
-      width: 93%;
-    padding: 15px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.input-adm-css
+    .btn-css-buttom {
+        background-color: #678371;
+        color: white;
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        border-radius: 4px;
+        padding: 10px;
 
 
-*:focus {
-            outline: none
-        }
+    }
+
+    .btn-css,
+    .btn-css-cadastrar {
+        background-color: #678371;
+        color: white;
+        cursor: pointer;
+        border: none;
+        width: 80px;
+        border-radius: 4px;
+        padding: 10px;
+        margin-top: 10px;
+
+    }
+
+    .btn-css-cadastrar {
+        width: 100px;
+    }
+
+    .btn-css-excluir {
+        background-color: #dc3545;
+        color: white;
+        cursor: pointer;
+        border: none;
+        width: 80px;
+        border-radius: 4px;
+        padding: 10px;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .input-adm-css,
+    .button-prod-css {
+        width: 93%;
+        padding: 15px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .input-adm-css *:focus {
+        outline: none
+    }
 
 
-        .form-item {
-            position: relative;
-            margin-bottom: 15px
-        }
+    .form-item {
+        position: relative;
+        margin-bottom: 15px
+    }
 
-        .form-item input {
-            width: 95%;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: block;
-    background: transparent;
-    border: solid 1px #ccc;
-    transition: all .3s ease;
-    padding-left: 17px;
-    height: 40px;
-}
-        
-
-
-        .form-item input:focus {
-            border-color: #678371
-        }
-
-        .form-item label {
-            position: absolute;
-            cursor: text;
-            z-index: 2;
-            top: 13px;
-            left: 10px;
-            font-size: 12px;
-            font-weight: bold;
-            background: #fff;
-            padding: 0 10px;
-            color: #999;
-            transition: all .3s ease
-        }
-
-        .form-item input:focus+label,
-        .form-item input:valid+label {
-            font-size: 11px;
-            top: -5px
-        }
-
-        .form-item input:focus+label {
-            color: #678371
-        }
-
-        .move-right {
-            left: 0%;
-            /* Move para a direita */
-        }
+    .form-item input {
+        width: 95%;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        display: block;
+        background: transparent;
+        border: solid 1px #ccc;
+        transition: all .3s ease;
+        padding-left: 17px;
+        height: 40px;
+    }
 
 
-        /* Classes para o efeito tesoura */
-        .move-left-container {
-            transform: translateX(-10px);
-            /* Move a esquerda ligeiramente para a esquerda */
-        }
 
-        .move-right-container {
-            transform: translateX(10px);
-            /* Move a direita ligeiramente para a direita */
-        }
+    .form-item input:focus {
+        border-color: #678371
+    }
+
+    .form-item label {
+        position: absolute;
+        cursor: text;
+        z-index: 2;
+        top: 13px;
+        left: 10px;
+        font-size: 12px;
+        font-weight: bold;
+        background: #fff;
+        padding: 0 10px;
+        color: #999;
+        transition: all .3s ease
+    }
+
+    .form-item input:focus+label,
+    .form-item input:valid+label {
+        font-size: 11px;
+        top: -5px
+    }
+
+    .form-item input:focus+label {
+        color: #678371
+    }
+
+    .move-right {
+        left: 0%;
+        /* Move para a direita */
+    }
+
+
+    /* Classes para o efeito tesoura */
+    .move-left-container {
+        transform: translateX(-10px);
+        /* Move a esquerda ligeiramente para a esquerda */
+    }
+
+    .move-right-container {
+        transform: translateX(10px);
+        /* Move a direita ligeiramente para a direita */
+    }
 
 
 
@@ -288,6 +309,13 @@
         height: 100%;
 
     }
+
+    .fotoAdm img {
+        max-width: 150px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+    }
 </style>
 
 <body>
@@ -296,8 +324,8 @@
     <div class="ConteinerPrincipal">
         <div class="conteinerCentral">
             <div class="painelfoto">
-                <div class="fotoAdm"></div>
-                <H1>Ola Administrador</H1>
+                <div class="fotoAdm"><img src="user_dark.png" alt="Image" height="10" width="10"></div>
+                <p>Ola Administrador</p>
             </div>
             <div class="Informacao-Adm">
                 <div class="container-mid registering">
@@ -314,7 +342,7 @@
                             <option value="Plantas">Plantas</option>
                         </select>
                         <div class="form-item">
-                            <input type="text" id="username" autocomplete="off" required >
+                            <input type="text" id="username" autocomplete="off" required>
                             <label for="username">Nome</label>
                         </div>
 
@@ -335,13 +363,15 @@
                     </div>
 
                     <div class="right-container">
-                        <div class="search-box-prod">
+                        <div class="categoria"></div>
+                         <div class="search-box-prod">
                             <input class="input-adm-css-procurar" type="text" placeholder="Procurar" />
                             <button>
                                 <img src="search_icon.png" alt="Search" />
                             </button>
                         </div>
                         <!-- <p>CATEGORIA</p> -->
+
                         <select class="input-adm-css">
                             <option value="" disabled>Selecione a categoria do Produto</option>
                             <option value="Arranjos">Arranjos</option>
@@ -350,7 +380,7 @@
                             <option value="Plantas">Plantas</option>
                         </select>
                         <div class="form-item">
-                            <input type="text" id="username"autocomplete="off" required value="">
+                            <input type="text" id="username" autocomplete="off" required value="">
                             <label for="username">Nome</label>
                         </div>
                         <div class="form-item">
@@ -368,16 +398,16 @@
                             <button class="btn-css-excluir">EXCLUIR</button>
                         </div>
                     </div>
-
-                    
                 </div>
-                <div class="container-button">
-                    <div class="button-div-um">
-                        <button class="btn-css-buttom" id="btn-cadastrar">CADASTRAR PRODUTO</button>
-                    </div>
-                    <div class="button-div-dois">
-                        <button class="btn-css-buttom" id="btn-editar">EDITAR PRODUTO</button>
-                    </div>
+
+            </div>
+            <div class="container-button">
+                <div class="button-div-um">
+                    <button class="btn-css-buttom" id="btn-cadastrar">CADASTRAR PRODUTO</button>
+                </div>
+                <div class="button-div-dois">
+                    <button class="btn-css-buttom" id="btn-editar">EDITAR PRODUTO</button>
+                </div>
             </div>
         </div>
     </div>
