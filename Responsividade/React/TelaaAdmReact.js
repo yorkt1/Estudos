@@ -4,6 +4,8 @@ import './Adm.css';
 import prod_foto from '../assets/prod-foto.png';
 import search_icon_light from '../assets/search_w.png';
 import search_icon_dark from '../assets/search_b.png';
+import user_dark from '../assets/user_dark.png';
+
 
 const App = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -17,6 +19,11 @@ const App = () => {
     const movableDivRef = useRef(null);
     const leftContainerRef = useRef(null);
     const rightContainerRef = useRef(null);
+
+    const toggle_mode = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
+
 
     useEffect(() => {
         if (movableDivRef.current) {
@@ -183,12 +190,12 @@ const App = () => {
 
     return (
         <div>
-            <header></header>
+          
             <div className="ConteinerPrincipal">
                 <div className="conteinerCentral">
                     <div className="painelfoto">
                         <div className="foto-adm">
-                            <img  alt="Administrador" />
+                        <img src={user_dark} className='user-perfil' alt="user-perfil" />
                         </div>
                         <p>Olá Administrador</p>
                     </div>
@@ -216,12 +223,12 @@ const App = () => {
                             </div>
 
                             <div className="right-container" ref={rightContainerRef}>
-                                <div className="search-box-prod">
+                               <div className="search-box-prod">
                                     <input className="input-adm-css" type="text" placeholder="Procurar" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
                                     <button onClick={handleSearch}>
-                                        <img className="icon-search" src={search_icon_light} alt="Search" />
+                                    <img src={ search_icon_dark}/>
                                     </button>
-                                </div>
+                                </div> 
                                 <select className="input-adm-css" value={categoria} onChange={(e) => setCategoria(e.target.value)}>
                                     <option value="" disabled>Selecione a categoria do Produto</option>
                                     <option value="Arranjos">Arranjos</option>
@@ -238,10 +245,10 @@ const App = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div className="container-button">
                         <button className="btn-css-buttom" onClick={handleCadastrarA}>CADASTRAR PRODUTO</button>
                         <button className="btn-css-buttom" onClick={handleEditarB}>EDITAR PRODUTO</button>
+                    </div>
                     </div>
                 </div>
             </div>
