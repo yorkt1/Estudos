@@ -72,7 +72,7 @@ body {
     position: absolute;
     top: 0;
     left: 50%;
-    transition: left 0.7s ease; /* Transition added here */
+    transition: left 0.9s ease; /* Transition added here */
     z-index: 2;
     border-radius: 8px;
 }
@@ -80,12 +80,16 @@ body {
 .left-container,
 .right-container {
     flex: 1;
-    margin: 20px;
+    margin: 10px;
     position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    transition: transform 0.5s ease; /* Ensure this is included */
+    transition: transform 0.9s ease;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
 }
 
 /* Additional CSS rules... */
@@ -136,10 +140,10 @@ img {
     padding: 10px 20px;
     border-radius: 50px;
     height: 30px;
-    width: 240px;
+    width: 150px;    
     transition: 0.5s;
     margin: 5px;
-    margin-left: 30%;
+   
 }
 
 
@@ -160,7 +164,7 @@ img {
 
 
 .dark .search-box-prod input{
-    padding: 6px;
+   
     background: transparent;
     border: 0;
     outline: 0;
@@ -168,6 +172,7 @@ img {
     font-family: 18px;
     max-width: 200px;
     transition: 0.5s;
+    margin: 5px;
 }
 
 
@@ -184,8 +189,8 @@ img {
 
 .input-adm-css,
 .button-prod-css {
-    width: 93%;
-    padding: 15px;
+    width: 100%;
+    padding:5px;
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -201,14 +206,14 @@ img {
 }
 
 .form-item input {
-    width: 95%;
+    width: 100%;
     margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background: transparent;
     transition: all 0.3s ease;
     padding-left: 17px;
-    height: 40px;
+    height: 30px;
 }
 
 .form-item input:focus {
