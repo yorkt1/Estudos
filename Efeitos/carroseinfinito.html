@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel Infinito</title>
+    <style>
+        /* Container do carrossel */
+        .conteiner-slide {
+            width: 75vw; /* Largura do container */
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        /* Estilo da faixa de slides que irá se mover */
+        .paginas-slide {
+            display: inline-block;
+            animation: anime 10s linear infinite;
+        }
+
+        .paginas-slide span {
+            padding: 0 20px;
+            font-size: 2rem;
+            display: inline-block;
+        }
+
+        /* Definindo a animação */
+        @keyframes anime {
+            0% {
+                transform: translateX(0); /* Começa na posição inicial */
+            }
+            100% {
+                transform: translateX(-50%); /* Move o conteúdo até a metade do seu tamanho */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner-slide">
+        <div class="paginas-slide">
+            <!-- Conteúdo repetido para garantir o loop contínuo -->
+            <span>React</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>PEROCA</span>
+            <span>SHOTA</span>
+            <span>React</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>PEROCA</span>
+            <span>SHOTA</span>
+
+            <!-- Duplicação do conteúdo -->
+            <span>React</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>PEROCA</span>
+            <span>SHOTA</span>
+            <span>React</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>PEROCA</span>
+            <span>SHOTA</span>
+        </div>
+    </div>
+</body>
+</html>
