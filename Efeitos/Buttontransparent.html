@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><style>
+body{
+    background-color: aquamarine;
+}
+.botao-transparente {
+    background: transparent; /* Fundo transparente inicialmente */
+    color: #fff; /* Cor do texto */
+    border: 2px solid transparent; /* Borda invisível inicialmente */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    position: relative; /* Para permitir o uso de pseudo-elementos */
+    overflow: hidden; /* Garante que o efeito não "vaze" para fora do botão */
+    border-radius: 30px; /* Borda arredondada */
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Transição suave */
+}
+
+.botao-transparente::before {
+    content: ""; /* Cria um pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f9f6ef; /* Cor fosca, ajustável */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+    z-index: -1; /* Coloca o pseudo-elemento abaixo do texto */
+    border-radius: 12px; /* Arredondamento da borda do fundo */
+}
+
+.botao-transparente:hover {
+    
+    background: #f9f6ef; /* Cor de fundo fosca ao passar o mouse */
+
+}
+
+.botao-transparente:hover::before {
+    opacity: 0.5; /* Torna o fundo visível com efeito fosco */
+}
+</style>
+<body>
+    <button class="botao-transparente">Clique aqui</button>
+</body>
+</html>
