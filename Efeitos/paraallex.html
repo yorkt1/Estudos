@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax com SVGs e Gradientes</title>
+    <link rel="stylesheet" href="style.css">
+</head><style>
+
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 1vw;
+}
+
+body {
+    position: relative;
+    background-color: #F2EEDD;
+    background-image: linear-gradient(to bottom, #7DE2FC 0%, #ffecd2 100%);
+    height: 400rem;
+    min-height: 300vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scroll styling */
+.scroll {
+    position: absolute;
+    top: 50vh;
+    left: 50%;
+    margin-left: -7rem;
+    width: 14rem;
+    font-family: Futura, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #405D86;
+}
+
+.scroll svg {
+    margin: 0 2rem;
+}
+
+/* Letter and Parallax */
+.word {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.letter {
+    position: relative;
+    margin: 0 0.5rem;
+    height: 15rem;
+    width: 10rem;
+    display: inline-block;
+}
+
+.form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fill-1 {
+    fill: #F9A4D5;
+}
+
+.fill-2 {
+    fill: #6F71A9;
+}
+
+.fill-3 {
+    fill: #F0D8AE;
+}
+
+.fill-4 {
+    fill: #A5C6E6;
+}
+
+.fill-5 {
+    fill: #EB7D3D;
+}
+
+.fill-6 {
+    fill: #F15F5F;
+}
+
+.button {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    padding: 1rem;
+    background-color: #F15F5F;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.fullscreen {
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+    padding: 1rem;
+    background-color: transparent;
+    color: #405D86;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.fullscreen svg {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+}
+
+
+
+</style>
+<body>
+    <div class="scroll">
+        <p>Scroll</p>
+        <svg version="1.1" x="0px" y="0px" viewBox="0 0 167 299">
+            <polygon class="fill-3" points="167,73 83.5,298.9 0,73 "/>
+            <polygon class="fill-1" points="137.4,0 83.5,145.9 29.6,0 "/>
+        </svg>
+    </div>
+
+    <div class="word">
+        <!-- Letra P -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 134 281">
+                <rect class="fill-1" y="22" width="67" height="204"/>
+            </svg>
+            <svg class="form" viewBox="0 0 134 281">
+                <ellipse class="fill-2" cx="67" cy="89" rx="67" ry="67"/>
+            </svg>
+            <svg class="form" viewBox="0 0 134 281">
+                <circle class="fill-1" cx="67" cy="89" r="25"/>
+            </svg>
+        </div>
+
+        <!-- Letra A -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 167 281">
+                <polygon class="fill-4" points="0,226 83.5,0.1 167,226 "/>
+            </svg>
+            <svg class="form" viewBox="0 0 167 281">
+                <path class="fill-1" d="M112.8,211.8v29.5c0,16.3-13.2,29.5-29.5,29.5s-29.5-13.2-29.5-29.5v-29.5 c0-16.3,13.2-29.5,29.5-29.5S112.8,195.5,112.8,211.8z"/>
+            </svg>
+        </div>
+
+        <!-- Letra R -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 135 281">
+                <path class="fill-2" d="M67,22H0v134h67c37,0,67-30,67-67S104,22,67,22z"/>
+            </svg>
+            <svg class="form" viewBox="0 0 135 281">
+                <polygon class="fill-6" points="55,226 55,92 135,226 "/>
+            </svg>
+            <svg class="form" viewBox="0 0 135 281">
+                <rect class="fill-1" y="22" width="55" height="204"/>
+            </svg>
+        </div>
+
+        <!-- Letra A -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 167 281">
+                <polygon class="fill-5" points="0,226 83.5,0.1 167,226 "/>
+            </svg>
+            <svg class="form" viewBox="0 0 167 281">
+                <path class="fill-1" d="M112.8,211.8v29.5c0,16.3-13.2,29.5-29.5,29.5s-29.5-13.2-29.5-29.5v-29.5 c0-16.3,13.2-29.5,29.5-29.5S112.8,195.5,112.8,211.8z"/>
+            </svg>
+        </div>
+
+        <!-- Letra L -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 110 281">
+                <rect class="fill-1" y="22" width="55" height="204"/>
+            </svg>
+            <svg class="form" viewBox="0 0 110 281">
+                <path class="fill-4" d="M0,226c0,30.4,24.6,55,55,55s55-24.6,55-55H0z"/>
+            </svg>
+        </div>
+
+        <!-- Letra L -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 110 281">
+                <rect class="fill-1" y="22" width="55" height="204"/>
+            </svg>
+            <svg class="form" viewBox="0 0 110 281">
+                <path class="fill-2" d="M0,226c0,30.4,24.6,55,55,55s55-24.6,55-55H0z"/>
+            </svg>
+        </div>
+
+        <!-- Letra A -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 167 281">
+                <polygon class="fill-3" points="0,226 83.5,0.1 167,226 "/>
+            </svg>
+            <svg class="form" viewBox="0 0 167 281">
+                <path class="fill-1" d="M112.8,211.8v29.5c0,16.3-13.2,29.5-29.5,29.5s-29.5-13.2-29.5-29.5v-29.5 c0-16.3,13.2-29.5,29.5-29.5S112.8,195.5,112.8,211.8z"/>
+            </svg>
+        </div>
+
+        <!-- Letra X -->
+        <div class="letter">
+            <svg class="form" viewBox="0 0 204 281">
+                <polygon class="fill-2" points="0.2,192 34.1,226 203.5,56 169.6,22 "/>
+            </svg>
+            <svg class="form" viewBox="0 0 204 281">
+                <polygon class="fill-1" points="0.2,56 34.1,22 203.5,192 169.6,226 "/>
+            </svg>
+        </div>
+    </div>
+
+    <a href="https://github.com/jscottsmith/react-scroll-parallax" rel="noopener" target="_blank" class="button">GitHub</a>
+    <a href="https://codepen.io/jscottsmith/full/eREbwz/" rel="noopener" target="_blank" class="fullscreen">
+        <svg version="1.1" x="0px" y="0px" viewBox="0 0 30 30">
+            <polygon points="16.5,15 23.1,8.3 26,11.2 26,4 18.8,4 21.7,6.9 15,13.5 8.3,6.9 11.2,4 4,4 4,11.2 6.9,8.3 13.5,15  6.9,21.7 4,18.8 4,26 11.2,26 8.3,23.1 15,16.5 21.7,23.1 18.8,26 26,26 26,18.8 23.1,21.7   "/>
+        </svg>
+    </a>
+    
+    <script src="script.js"></script>
+</body>
+</html>
