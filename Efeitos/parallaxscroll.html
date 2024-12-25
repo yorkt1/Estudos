@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll com Efeito de Vidro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 300vh; /* Altura maior para permitir o scroll */
+        }
+
+        .div1, .div3 {
+            background-color: lightblue;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        .div2 {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+      
+
+        .imagem {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Coloca a imagem atrás do conteúdo */
+        }
+
+        /* Estilo para os textos */
+        span {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 3em;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="div1">
+            <h1>Div 1</h1>
+        </div>
+        <div class="div2">
+            <div class="glass">
+                <!-- Texto e Botão no meio -->
+                <span>Sabores</span>
+                <h2>Belluno</h2>
+                <button>Menu</button>
+            </div>
+            <img src="o-verdadeiro-gelato-italiano.jpg" alt="Imagem" class="imagem">
+        </div>
+        <div class="div3">
+            <h1>Div 3</h1>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const imagem = document.querySelector('.imagem');
+            const div2 = document.querySelector('.div2');
+            const scrollY = window.scrollY;
+            const offset = div2.offsetTop;
+
+            // A posição da imagem se moverá conforme o scroll
+            let scrollPosition = (scrollY - offset) * 0.5; // Controla a velocidade do movimento da imagem
+            imagem.style.transform = `translateY(${scrollPosition}px)`;
+        });
+    </script>
+</body>
+</html>

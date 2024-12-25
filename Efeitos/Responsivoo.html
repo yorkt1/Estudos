@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .central {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+            flex-wrap: wrap;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .caixa {
+            transition: transform 0.5s ease-in-out;
+            width: 30%;
+            height: 200px;
+            margin: 10px;
+            background-color: red;
+        }
+
+        .Um {
+            background-color: red;
+        }
+
+        .dois {
+            background-color: blue;
+        }
+
+        .tres {
+            background-color: black;
+        }
+
+        /* Animação com hover */
+        .central:hover {
+            transform: translateY(100px); /* Exemplo de movimento */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .caixa {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .caixa {
+                width: 90%;
+                height: 150px; /* Ajustar altura em dispositivos móveis */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="central">
+        <div class="caixa Um"></div>
+        <div class="caixa dois"></div>
+        <div class="caixa tres"></div>
+    </div>
+</body>
+</html>
