@@ -51,6 +51,7 @@
             <input id="nomeid" type="text" placeholder="nome">
             <input id="senhaid" type="number" placeholder="senha">
             <button onclick="cadastrar()">Cadastrar </button>
+            <div id="erro"></div>
 
         </div>
         <div class="painel">
@@ -65,18 +66,31 @@
 
 let usuario = [
 
- 
 ];
+function validarSenha(senha){
+    
+}
 
 
 function cadastrar() {
-
+ 
     let nomeid = document.getElementById('nomeid').value
     let senhaid = document.getElementById('senhaid').value
+
+    const usuarioCadastrado = {email: nomeid, senha: senhaid}
     
-    const usuario = {email: nomeid, senha: senhaid}
-    usuario.push
+    usuario.push(usuarioCadastrado)
     console.log("usuario cadastrardo", usuario)
+
+    MostrarInformaçoes()
+}
+
+function MostrarInformaçoes() {
+
+ let testElemento = document.querySelector("#informacao");
+
+
+    console.log(testElemento)
     
 }
  
