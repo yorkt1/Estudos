@@ -64,36 +64,51 @@
 </body>
 <script>
 
-let usuario = [
+    let usuario = [
 
-];
-function validarSenha(senha){
-    
-}
+    ];
+    function validarSenha(senha) {
 
-
-function cadastrar() {
- 
-    let nomeid = document.getElementById('nomeid').value
-    let senhaid = document.getElementById('senhaid').value
-
-    const usuarioCadastrado = {email: nomeid, senha: senhaid}
-    
-    usuario.push(usuarioCadastrado)
-    console.log("usuario cadastrardo", usuario)
-
-    MostrarInformaçoes()
-}
-
-function MostrarInformaçoes() {
-
- let testElemento = document.querySelector("#informacao");
+    }
 
 
-    console.log(testElemento)
-    
-}
- 
+    function cadastrar() {
+
+        let nomeid = document.getElementById('nomeid').value
+        let senhaid = document.getElementById('senhaid').value
+
+
+
+        MostrarInformaçoes()
+
+        if (!nomeid || !senhaid) {
+
+            alert("preencha todos os campos")
+        } else {
+
+            const usuarioCadastrado = { email: nomeid, senha: senhaid }
+
+            usuario.push(usuarioCadastrado)
+            console.log("usuario cadastrardo", usuario)
+        }
+    }
+
+    function MostrarInformaçoes() {
+
+        let testElemento = document.querySelector("#informacao");
+
+            testElemento.innerHTML = ""
+
+        usuario.forEach( user
+
+
+        )
+
+
+        console.log(testElemento)
+
+    }
+
 </script>
 
 </html>
