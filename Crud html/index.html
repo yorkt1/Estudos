@@ -97,15 +97,23 @@
 
         let testElemento = document.querySelector("#informacao");
 
-            testElemento.innerHTML = ""
+            
 
-        usuario.forEach( user
+        usuario.forEach( user => {
 
+            let userDiv = document.createElement("div");
 
-        )
+            userDiv.textContent = ` nome: ${user.email}, Senha: ${user.senha}`;
+            testElemento.appendChild(userDiv)
+            
 
+            
 
-        console.log(testElemento)
+        })
+            
+
+        
+        console.log(testElemento) 
 
     }
 
