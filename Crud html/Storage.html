@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD com LocalStorage</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD com LocalStorage</h1>
+    
+    <form id="form">
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="number" id="idade" placeholder="Idade" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Lista de Pessoas</h2>
+    <table id="tabela">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script >// Função para carregar os dados do localStorage
+        function carregarDados() {
+            const dados = JSON.parse(localStorage.getItem('pessoas')) || [];
+            const tabela = document.querySelector('#tabela tbody');
+            tabela.innerHTML = '';
+            dados.forEach((pessoa, index) => {
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td>${pessoa.nome}</td>
+                    <td>${pessoa.idade}</td>
+                    <td>
+                        <button onclick="editarPessoa(${index})">Editar</button>
+                        <button onclick="deletarPessoa(${index})">Deletar</button>
+                    </td>
+                `;
+                tabela.appendChild(linha);
+            });
+        }
+        
+        // Função para salvar os dados no localStorage
+        function salvarDados(dados) {
+            localStorage.setItem('pessoas', JSON.stringify(dados));
+        }
+        
+        // Função para adicionar uma nova pessoa
+        function adicionarPessoa(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            
+            if (!nome || !idade) {
+                alert('Preencha todos os campos!');
+                return;
+            }
+            
+            const dados = JSON.parse(localStorage.getItem('pessoas')) || [];
+            dados.push({ nome, idade });
+            salvarDados(dados);
+            
+            carregarDados();
+            
+            document.getElementById('form').reset();
+        }
+        
+        // Função para editar uma pessoa
+        function editarPessoa(index) {
+            const dados = JSON.parse(localStorage.getItem('pessoas'));
+            const pessoa = dados[index];
+            
+            document.getElementById('nome').value = pessoa.nome;
+            document.getElementById('idade').value = pessoa.idade;
+            
+            // Remove a pessoa original antes de editar
+            dados.splice(index, 1);
+            salvarDados(dados);
+            carregarDados();
+        }
+        
+        // Função para deletar uma pessoa
+        function deletarPessoa(index) {
+            const dados = JSON.parse(localStorage.getItem('pessoas'));
+            dados.splice(index, 1);
+            salvarDados(dados);
+            carregarDados();
+        }
+        
+        // Configura o evento do formulário para adicionar uma nova pessoa
+        document.getElementById('form').addEventListener('submit', adicionarPessoa);
+        
+        // Carrega os dados do localStorage quando a página é carregada
+        window.onload = carregarDados;
+        </script>
+</body>
+</html>
